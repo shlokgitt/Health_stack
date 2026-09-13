@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Environment variables (never commit real secrets)
+.env
+backend/.env
+frontend/.env
+ai/.env
+
+# Build output
+frontend/dist/
+frontend/build/
+
+# Raw source data (too large to commit - regenerate via data/01_clean_phcs.py)
+data/geocode_health_centre.csv
+
+# Editor/OS
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*

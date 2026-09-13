@@ -1,0 +1,11 @@
+medicine_id,name,category,unit,demand_per_100_patients
+MED001,Paracetamol,Analgesic,tablet,60
+MED002,ORS,Rehydration,sachet,25
+MED003,Amoxicillin,Antibiotic,capsule,20
+MED004,Insulin,Chronic care,vial,4
+MED005,Metformin,Chronic care,tablet,15
+MED006,Iron Folic Acid,Supplement,tablet,18
+MED007,Cough Syrup,Respiratory,bottle,8
+MED008,Ciprofloxacin,Antibiotic,tablet,10
+MED009,Antacid,Gastro,tablet,22
+MED010,Antiseptic Solution,First aid,bottle,6

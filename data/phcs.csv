@@ -1,0 +1,25 @@
+phc_id,state,district,subdistrict,name,latitude,longitude,beds,doctors,nurses
+PHC001,Uttar Pradesh,Allahabad,Dhanupur,Amepur,25.403788,82.24729,4,1,2
+PHC002,Uttar Pradesh,Allahabad,Koraon,Badokher,24.90281,81.9523,6,2,4
+PHC003,Uttar Pradesh,Allahabad,Saidabad,Asadia,25.305077,82.098752,6,1,4
+PHC004,Uttar Pradesh,Allahabad,Saidabad,Thulma  dhankesara,25.407678,82.09581,4,1,3
+PHC005,Uttar Pradesh,Pilibhit,Puranpur,Gabhiya Sarai,28.79292833,80.1025566,4,2,4
+PHC006,Uttar Pradesh,Pilibhit,Puranpur,Puranpur,28.51044,80.14615,4,1,2
+PHC007,Uttar Pradesh,Pilibhit,Amaria,Pareva baishya,28.7,79.65,4,1,3
+PHC008,Uttar Pradesh,Pilibhit,Marouri,Gajraula,28.533441,79.924557,6,1,2
+PHC009,Uttar Pradesh,Sant Ravidas Nagar,Aurai,Derwa,25.2344,82.4764,6,1,2
+PHC010,Uttar Pradesh,Sant Ravidas Nagar,Deegh,Semradh,25.238117,82.331323,6,2,4
+PHC011,Uttar Pradesh,Sant Ravidas Nagar,Aurai,Girdbargau,25.3109,82.5306,4,2,3
+PHC012,Uttar Pradesh,Sant Ravidas Nagar,Suriyawa,Durgaganj,25.479792,82.337849,4,1,4
+PHC013,Rajasthan,Ajmer,Arain,Dadia,26.415892,74.974211,6,2,4
+PHC014,Rajasthan,Ajmer,Arain,Banthali,26.4495,75.039211,6,2,3
+PHC015,Rajasthan,Ajmer,Pisangan,Birkchiyawas,26.2746,74.504681,4,1,2
+PHC016,Rajasthan,Ajmer,Bhinai,Shingawal,26.035082,74.681027,6,2,2
+PHC017,Rajasthan,Jhalawar,Manoharthana,Kamkheda PHC,24.369004,76.690357,4,1,3
+PHC018,Rajasthan,Jhalawar,Jhalawar,City Dispensary Jhalawar,24.597349,76.160984,4,2,2
+PHC019,Rajasthan,Jhalawar,Bakani,Gehoon Kheri,24.36892,76.462093,4,2,3
+PHC020,Rajasthan,Jhalawar,Khanpur,Harigarh PHC,24.656217,76.262395,4,1,3
+PHC021,Rajasthan,Rajsamand,Amet,Sardargarh,25.246093,73.976784,4,1,4
+PHC022,Rajasthan,Rajsamand,Rajsamand,Pipli Acharyan,25.051784,73.991818,4,1,3
+PHC023,Rajasthan,Rajsamand,Khamnor,Machind,24.927243,73.604314,6,1,4
+PHC024,Rajasthan,Rajsamand,Amet,Agria,25.248927,73.930306,4,2,2
