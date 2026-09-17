@@ -2,17 +2,24 @@
 -- Matches the data model in the project plan doc (Section 13)
 
 CREATE TABLE phc (
-    phc_id VARCHAR(10) PRIMARY KEY,
+    phc_id VARCHAR(12) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     district VARCHAR(100) NOT NULL,
     state VARCHAR(100) NOT NULL,
     subdistrict VARCHAR(100),
     latitude DOUBLE PRECISION NOT NULL,
     longitude DOUBLE PRECISION NOT NULL,
-    beds INTEGER NOT NULL DEFAULT 0,
-    doctors INTEGER NOT NULL DEFAULT 0,
-    nurses INTEGER NOT NULL DEFAULT 0
+    beds INTEGER,
+    doctors INTEGER,
+    nurses INTEGER,
+    -- TRUE for the small set of demo facilities with real operational
+    -- data attached (inventory, consumption, forecasts). FALSE for the
+    -- national reference layer (~29.5k real PHCs shown on the map for
+    -- context/scale, with no synthetic operational data generated for
+    -- them - see data/01b_build_full_phc_layer.py).
+    is_active BOOLEAN NOT NULL DEFAULT FALSE
 );
+CREATE INDEX idx_phc_is_active ON phc(is_active);
 
 CREATE TABLE medicine (
     medicine_id VARCHAR(10) PRIMARY KEY,
