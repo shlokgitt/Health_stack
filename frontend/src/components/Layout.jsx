@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const navigation = [
   {
@@ -24,6 +25,7 @@ const navigation = [
 ];
 
 export default function Layout() {
+  const { user, logout } = useAuth();
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <header className="border-b border-slate-200 bg-white">
@@ -38,9 +40,26 @@ export default function Layout() {
             </p>
           </div>
 
-          <div className="hidden items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-medium text-emerald-700 sm:flex">
-            <span className="h-2 w-2 rounded-full bg-emerald-500" />
-            System Online
+          <div className="flex items-center gap-4">
+            <div className="hidden items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-medium text-emerald-700 sm:flex">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              System Online
+            </div>
+            
+            {user && (
+              <div className="flex items-center gap-3 border-l pl-4 border-slate-200">
+                <div className="text-right hidden sm:block">
+                  <p className="text-sm font-semibold text-slate-800 uppercase">{user.phc_id}</p>
+                  <p className="text-xs text-slate-500">{user.role}</p>
+                </div>
+                <button
+                  onClick={logout}
+                  className="rounded-md bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-600 hover:bg-slate-200 transition"
+                >
+                  Sign Out
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </header>

@@ -1,6 +1,9 @@
 import { Router } from "express";
 import axios from "axios";
 
+import { login, getMe, logout } from "../controllers/authController.js";
+import { authenticate } from "../middleware/authMiddleware.js";
+
 import { listPhcs, getPhc } from "../controllers/phcController.js";
 import {
   getInventoryForPhc,
@@ -18,32 +21,40 @@ const AI_SERVICE_URL =
   process.env.AI_SERVICE_URL || "http://localhost:8000";
 
 /* =========================
+   AUTH ROUTES
+========================= */
+
+router.post("/auth/login", login);
+router.get("/auth/me", authenticate, getMe);
+router.post("/auth/logout", authenticate, logout);
+
+/* =========================
    PHC ROUTES
 ========================= */
 
-router.get("/phcs", listPhcs);
+router.get("/phcs", authenticate, listPhcs);
 
-router.get("/phcs/:id", getPhc);
+router.get("/phcs/:id", authenticate, getPhc);
 
 /* =========================
    INVENTORY ROUTES
 ========================= */
 
-router.get("/inventory", getInventoryOverview);
+router.get("/inventory", authenticate, getInventoryOverview);
 
-router.get("/inventory/:phcId", getInventoryForPhc);
+router.get("/inventory/:phcId", authenticate, getInventoryForPhc);
 
 /* =========================
    ALERT ROUTES
 ========================= */
 
-router.get("/alerts", listAlerts);
+router.get("/alerts", authenticate, listAlerts);
 
 /* =========================
    AI FORECAST
 ========================= */
 
-router.get("/forecasts/:phcId", async (req, res) => {
+router.get("/forecasts/:phcId", authenticate, async (req, res) => {
   try {
     const response = await axios.get(
       `${AI_SERVICE_URL}/forecasts/${req.params.phcId}`,
@@ -68,7 +79,7 @@ router.get("/forecasts/:phcId", async (req, res) => {
    AI STOCKOUT PREDICTION
 ========================= */
 
-router.post("/predictions/stockout", async (req, res) => {
+router.post("/predictions/stockout", authenticate, async (req, res) => {
   try {
     const response = await axios.post(
       `${AI_SERVICE_URL}/predictions/stockout`,
@@ -94,13 +105,13 @@ router.post("/predictions/stockout", async (req, res) => {
    RECOMMENDATIONS
 ========================= */
 
-router.get("/recommendations", listRecommendations);
+router.get("/recommendations", authenticate, listRecommendations);
 
 /* =========================
    TRANSFER APPROVAL
 ========================= */
 
-router.post("/transfers", async (req, res) => {
+router.post("/transfers", authenticate, async (req, res) => {
   try {
     const {
       source_phc,
