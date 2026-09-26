@@ -21,7 +21,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-MODEL_NAME = "gemini-2.5-flash"  # fast + cheap, good fit for short generations
+MODEL_NAME = "gemini-3.6-flash"  # fast + cheap, good fit for short generations
 
 _client = genai.Client(api_key=GEMINI_API_KEY) if GEMINI_API_KEY else None
 
